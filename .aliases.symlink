@@ -10,7 +10,7 @@ command -v wget > /dev/null 2>&1 && alias wget='wget -c'
 # Add color by default
 if command -v exa > /dev/null 2>&1; then
     alias ls='exa'
-elif [[ "$(uname -s)" == "Linux" ]]
+elif [[ "$(uname -s)" == "Linux" ]]; then
     alias ls='ls --color=always'
 fi
 
