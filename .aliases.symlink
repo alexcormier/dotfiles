@@ -8,7 +8,12 @@ alias mkdir='mkdir -p'
 command -v wget > /dev/null 2>&1 && alias wget='wget -c'
 
 # Add color by default
-alias ls='ls --color=always'
+if command -v exa > /dev/null 2>&1; then
+    alias ls='exa'
+elif [[ "$(uname -s)" == "Linux" ]]
+    alias ls='ls --color=always'
+fi
+
 alias grep='grep --color=always'
 alias egrep='egrep --color=always'
 alias fgrep='fgrep --color=always'
