@@ -166,11 +166,11 @@ function git_prompt {
 }
 
 PROMPT='
-[%F{magenta}%~%f]%f$(git_prompt)
-%(?,%F{blue},%F{red})>>>%f '
-PROMPT2='%(?,%F{blue},%F{red})  >%f '
-PROMPT3='%(?,%F{blue},%F{red})  >%f '
-PROMPT4='%(?,%F{blue},%F{red})  >%f '
+[%(#,%F{red},%F{green})%n%f@%(#,%F{red},%F{green})%M%f][%F{magenta}%~%f]$(git_prompt)
+%(?,%(#,%F{cyan},%F{blue}),%F{red})>>>%f '
+PROMPT2='%(?,%(#,%F{cyan},%F{blue}),%F{red})  >%f '
+PROMPT3='%(?,%(#,%F{cyan},%F{blue}),%F{red})  >%f '
+PROMPT4='%(?,%(#,%F{cyan},%F{blue}),%F{red})  >%f '
 
 RPROMPT2='%(?,%F{blue},%F{red})(%B%F{cyan}%_%b%(?,%F{blue},%F{red}))%f'
 
