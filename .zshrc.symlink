@@ -150,8 +150,7 @@ function git_prompt {
         if [ $detached -eq 0 ]; then 
             ahead=0
             behind=0
-            rev_list="$(git rev-list --left-right $git_branch@{u}... 2> /dev/null)"
-            if [[ -n "$rev_list" ]]; then
+            if rev_list="$(git rev-list --left-right $git_branch@{u}... 2> /dev/null)"; then
                 echo $rev_list | cut -c 1 | while read s; do
                     case $s in
                         '>') ((++ahead)) ;;
