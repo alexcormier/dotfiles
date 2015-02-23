@@ -1,0 +1,10 @@
+[user]
+    name = Alexandre Cormier
+    email = alexandre@cormier.io
+[core]
+    editor = vim
+    autocrlf = input
+[color]
+    ui = true
+[push]
+    default = simple
