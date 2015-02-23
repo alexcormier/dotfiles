@@ -58,7 +58,7 @@ case "$(uname -s)" in
         ;;
     Darwin)
         brew_prefix="$(brew --prefix 2> /dev/null)"
-        
+
         if [ -d $brew_prefix/share/zsh-completions ]; then
             fpath=($brew_prefix/share/zsh-completions $fpath)
         fi
@@ -135,19 +135,19 @@ function git_prompt {
         done
 
         git_unstaged=''
-        [ $untracked -ne 0 ] && git_unstaged+='%F{green}⚪'
-        [ $modified -ne 0 ] && git_unstaged+='%F{yellow}⚪'
-        [ $deleted -ne 0 ] && git_unstaged+='%F{red}⚪'
+        [ $untracked -ne 0 ] && git_unstaged+='%F{green}○'
+        [ $modified -ne 0 ] && git_unstaged+='%F{yellow}○'
+        [ $deleted -ne 0 ] && git_unstaged+='%F{red}○'
         [ -n "$git_unstaged" ] && git_unstaged="|${git_unstaged}%f"
 
         git_staged=''
-        [[ $added -ne 0 ]] && git_staged+='%F{green}⚫'
-        [[ $modified_staged -ne 0 ]] && git_staged+='%F{yellow}⚫'
-        [[ $deleted_staged -ne 0 ]] && git_staged+='%F{red}⚫'
+        [[ $added -ne 0 ]] && git_staged+='%F{green}●'
+        [[ $modified_staged -ne 0 ]] && git_staged+='%F{yellow}●'
+        [[ $deleted_staged -ne 0 ]] && git_staged+='%F{red}●'
         [[ -n "$git_staged" ]] && git_staged="|${git_staged}%f"
 
         git_divergence=''
-        if [ $detached -eq 0 ]; then 
+        if [ $detached -eq 0 ]; then
             ahead=0
             behind=0
             if rev_list="$(git rev-list --left-right $git_branch@{u}... 2> /dev/null)"; then
