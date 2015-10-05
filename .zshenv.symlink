@@ -12,10 +12,15 @@ case "$(uname -s)" in
         export C="clang"
         export CXX="clang++"
         export STUDIO_JDK="$(/usr/libexec/java_home)/../.."
+	$(boot2docker shellinit 2> /dev/null)
         ;;
 esac
 
+path=("$HOME/bin" $path)
+
 if command -v go > /dev/null 2>&1; then
-    export GOPATH="$HOME/go"
-    path+=($(go env GOROOT)/bin $HOME/bin)
+    export GOPATH="$HOME/git/go"
+    path=("$GOPATH/bin" $path)
+    path+="$(go env GOROOT)/bin"
 fi
+

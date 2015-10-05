@@ -1,0 +1,20 @@
+#!/bin/sh
+
+[[ "$(uname -s)" == "Darwin" ]] || exit 0
+
+if command -v brew > /dev/null 2>&1; then
+    echo "brew is already installed."
+    exit 0
+fi
+
+# Installing homebrew
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+# Install completion
+ln -s "$(brew --prefix)/Library/Contributions/brew_zsh_completion.zsh" /usr/local/share/zsh/site-functions
+
+# Install formulaes
+while read line
+do
+    [ "${line###*}" ] && brew $line
+done < ../Brewfile

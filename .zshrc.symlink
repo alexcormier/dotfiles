@@ -166,7 +166,7 @@ function git_prompt {
 }
 
 PROMPT='
-[%(#,%F{red},%F{green})%n%f@%(#,%F{red},%F{green})%M%f][%F{magenta}%~%f]$(git_prompt)
+[%(#,%F{red},%F{green})%n%f@%(#,%F{red},%F{green})%m%f][%F{magenta}%~%f]$(git_prompt)
 %(?,%(#,%F{cyan},%F{blue}),%F{red})>>>%f '
 PROMPT2='%(?,%(#,%F{cyan},%F{blue}),%F{red})  >%f '
 PROMPT3='%(?,%(#,%F{cyan},%F{blue}),%F{red})  >%f '
@@ -193,4 +193,4 @@ fi
 # pretty logo & system info
 #######################################################################
 
-screenfetch
+command -v screenfetch > /dev/null 2>&1 && screenfetch

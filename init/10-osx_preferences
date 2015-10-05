@@ -1,0 +1,7 @@
+#!/bin/sh
+
+[[ "$(uname -s)" == "Darwin" ]] || exit 0
+
+# Screenshot settings
+defaults write com.apple.screencapture type jpg
+defaults write com.apple.screencapture location ~/Pictures/Screenshots
