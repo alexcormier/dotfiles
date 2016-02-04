@@ -1,0 +1,3 @@
+#!/bin/bash
+
+setxkbmap -query | awk '{if ($1 == "layout:") {layout=$2} else if ($1 == "variant:") {layout=layout "("$2")"}}; END{print layout}'

@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if [[ -n "$1" ]]; then
+    setxkbmap $1
+else
+    layout="$(current_layout)"
+    case "$layout" in
+        'us')
+            setxkbmap -layout us -variant intl
+            ;;
+        'us(intl)')
+            setxkbmap -layout ru
+            ;;
+        'ru')
+            setxkbmap -layout ru -variant phonetic
+            ;;
+        *)
+            setxkbmap us
+            ;;
+    esac
+fi
