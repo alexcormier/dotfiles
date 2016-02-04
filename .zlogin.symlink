@@ -1,1 +1,1 @@
-[[ -f ~/.xinitrc && -z $DISPLAY && $XDG_VTNR -eq 1 ]] && ssh-agent startx
+[[ -f ~/.xinitrc && -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec ssh-agent startx
