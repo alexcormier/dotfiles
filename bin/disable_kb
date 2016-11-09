@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+xinput disable "Apple Inc. Apple Internal Keyboard / Trackpad"
