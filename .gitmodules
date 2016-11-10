@@ -1,3 +1,9 @@
 [submodule "dotbot"]
-	path = dotbot
+	path = .dotbot
 	url = git://github.com/anishathalye/dotbot
+[submodule ".dotbot"]
+	path = .dotbot
+	url = git://github.com/anishathalye/dotbot
+[submodule ".plugins/pacaur"]
+	path = .plugins/pacaur
+	url = git://github.com/ajlende/dotbot-pacaur

@@ -16,6 +16,11 @@ case "$(uname -s)" in
         ;;
 esac
 
+for file in $HOME/bin/**/*; do
+    if [ -d $file ]; then
+        path=("$file" $path)
+    fi
+done
 path=("$HOME/bin" $path)
 
 if command -v go > /dev/null 2>&1; then

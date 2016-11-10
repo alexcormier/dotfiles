@@ -34,3 +34,14 @@ command -v subl3 > /dev/null 2>&1 && alias subl='subl3'
 command -v vim > /dev/null 2>&1 && alias vi='vim'
 command -v /Applications/Karabiner.app/Contents/Library/bin/karabiner > /dev/null 2>&1 && alias karabiner='/Applications/Karabiner.app/Contents/Library/bin/karabiner'
 command -v /Applications/Seil.app/Contents/Library/bin/seil > /dev/null 2>&1 && alias seil='/Applications/Seil.app/Contents/Library/bin/seil'
+
+if command -v xinput > /dev/null 2>&1; then
+    if xinput --query-state bcm5974 > /dev/null 2>&1; then
+        alias disable_tp='xinput disable bcm5974'
+        alias enable_tp='xinput enable bcm5974'
+    fi
+    if xinput --query-state 'Apple Inc. Apple Internal Keyboard / Trackpad' > /dev/null 2>&1; then
+        alias disable_kb='xinput disable "Apple Inc. Apple Internal Keyboard / Trackpad"'
+        alias enable_kb='xinput enable "Apple Inc. Apple Internal Keyboard / Trackpad"'
+    fi
+fi

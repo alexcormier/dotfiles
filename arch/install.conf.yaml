@@ -1,0 +1,67 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- pacaur:
+    - alsa-utils
+    - arm-none-eabi-gcc
+    - broadcom-wl-dkms
+    - compton
+    - dfu-utils
+    - dropbox
+    - eclipse-java
+    - evince
+    - feh
+    - file-roller
+    - fish
+    - google-chrome
+    - hexchat
+    - i3-wm
+    - intel-ucode
+    - libreoffice-fresh
+    - mpc
+    - mpd
+    - mycli
+    - mysql-workbench
+    - nano
+    - ncmpcpp
+    - openssh
+    - pcmanfm
+    - perl-image-exiftool
+    - screenfetch
+    - skype
+    - texlive-plainextra
+    - ttf-anonymous-pro
+    - update-pacman-mirrorlist
+    - vim
+    - virtualbox
+    - visual-studio-code
+    - vlc
+    - wget
+    - xbindkeys
+    - xflux
+    - xorg-server
+    - xorg-xbacklight
+    - xorg-xev
+    - xorg-xinit
+    - xorg-xinput
+    - xorg-xsetroot
+    - xsel
+    - zsh
+    - zsh-completions
+    - zsh-syntax-highlighting
+
+- link:
+    ~/bin/arch: bin
+    ~/.config/compton.conf: compton.conf
+    ~/.xbindkeysrc: xbindkeysrc
+    ~/.xinitrc: xinitrc
+    ~/.Xresources: Xresources
+
+- shell:
+    -
+        command: [systemctl enable update-pacman-mirrorlist.timer, Enabling automatic mirrorlist updates]
+        stdin: true
+        stdout: true
+        stderr: true

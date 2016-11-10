@@ -8,18 +8,14 @@
 - link:
     ~/.aliases: aliases
     ~/.gitconfig: gitconfig
-    ~/bin: bin
-    ~/.config/compton.conf: compton.conf
+    ~/bin/common: bin
     ~/.config/mpd/mpd.conf: mpd.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
-    ~/.xbindkeysrc: xbindkeysrc
-    ~/.xinitrc: xinitrc
-    ~/.Xresources: Xresources
-    ~/.zlogin: zlogin
-    ~/.zshenv: zshenv
-    ~/.zshkeys: zshkeys
-    ~/.zshrc: zshrc
+    ~/.zlogin: zsh/zlogin
+    ~/.zshenv: zsh/zshenv
+    ~/.zshkeys: zsh/zshkeys
+    ~/.zshrc: zsh/zshrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

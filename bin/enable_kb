@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-xinput enable "Apple Inc. Apple Internal Keyboard / Trackpad"

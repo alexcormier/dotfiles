@@ -1,3 +1,0 @@
-#!/usr/bin/env sh
-
-xinput enable bcm5974
