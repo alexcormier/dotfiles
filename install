@@ -10,8 +10,8 @@ DOTBOT_BIN="bin/dotbot"
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 cd "${BASEDIR}"
-git submodule update --init --recursive "${DOTBOT_DIR}"
+git submodule update --init --recursive
 
 for dir in ${DEFAULT_CONFIG_DIR} ${@}; do
-    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" --plugin-dir ".plugins/pacaur" -d "${BASEDIR}/${dir}" -c "${dir}/${CONFIG_FILE}"
+    "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}/${dir}" -c "${dir}/${CONFIG_FILE}" --plugin-dir "${BASEDIR}/.plugins"
 done
