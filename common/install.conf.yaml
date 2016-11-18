@@ -16,3 +16,14 @@
     ~/.zshenv: zsh/zshenv
     ~/.zshkeys: zsh/zshkeys
     ~/.zshrc: zsh/zshrc
+
+- rust:
+  - [nightly]
+
+- cargo:
+  - clippy
+  - racer
+  - rustfmt
+  - exa:
+    - git: https://github.com/ogham/exa
+    - no-default-features
