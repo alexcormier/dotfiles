@@ -23,6 +23,9 @@ for file in $HOME/bin/**/*; do
 done
 path=("$HOME/bin" $path)
 
+mkdir -p $HOME/.zfunc
+fpath+=$HOME/.zfunc
+
 if command -v go > /dev/null 2>&1; then
     export GOPATH="$HOME/git/go"
     path=("$GOPATH/bin" $path)
