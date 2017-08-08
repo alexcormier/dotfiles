@@ -21,9 +21,11 @@
   - [nightly]
 
 - cargo:
+  - cargo-update
   - clippy
+  - pijul
   - racer
   - rustfmt
+  - rustsym
   - exa:
     - git: https://github.com/ogham/exa
-    - no-default-features
