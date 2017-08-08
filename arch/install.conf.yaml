@@ -4,6 +4,7 @@
       relink: true
 
 - pacaur:
+    - albert
     - alsa-utils
     - arm-none-eabi-gcc
     - broadcom-wl-dkms
@@ -26,6 +27,7 @@
     - mysql-workbench
     - nano
     - ncmpcpp
+    - nitrogen
     - openssh
     - pcmanfm
     - perl-image-exiftool

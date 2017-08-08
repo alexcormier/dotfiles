@@ -36,6 +36,8 @@ xflux -l 46.7 -g -71.3
 xbindkeys
 xsetroot -cursor_name left_ptr
 [[ -f ~/.fehbg ]] && ~/.fehbg
+nitrogen --restore
 compton -b --config ~/.config/compton.conf
+albert &
 
 exec i3
