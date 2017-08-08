@@ -18,7 +18,24 @@
     ~/.zshrc: zsh/zshrc
 
 - rust:
-  - [nightly]
+  - stable:
+    - targets:
+      - x86_64-apple-darwin
+      - x86_64-unknown-linux-gnu
+      - x86_64-unknown-linux-musl
+    - components:
+      - rust-analysis
+      - rls
+      - rust-src
+  - nightly:
+    - targets:
+      - x86_64-apple-darwin
+      - x86_64-unknown-linux-gnu
+      - x86_64-unknown-linux-musl
+    - components:
+      - rust-analysis
+      - rls
+      - rust-src
 
 - cargo:
   - cargo-update
