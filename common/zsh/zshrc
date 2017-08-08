@@ -199,6 +199,6 @@ path+=~/bin
 # pretty logo & system info
 #######################################################################
 
-if [ "$(ps -o comm= $PPID)" != "atom" ] && [ ! -z $DISPLAY ] && command -v screenfetch > /dev/null 2>&1; then
+if [ "$(ps -o comm= $PPID)" != "code" ] && [ ! -z $DISPLAY ] && command -v screenfetch > /dev/null 2>&1; then
     uname -a | grep ARCH > /dev/null && screenfetch -c 04,15 || screenfetch
 fi
