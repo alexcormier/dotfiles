@@ -5,11 +5,11 @@ command -v vim > /dev/null 2>&1 && export EDITOR='vim'
 
 case "$(uname -s)" in
     Linux)
-        export C="gcc"
+        export CC="gcc"
         export CXX="g++"
         ;;
     Darwin)
-        export C="clang"
+        export CC="clang"
         export CXX="clang++"
         export STUDIO_JDK="$(/usr/libexec/java_home)/../.."
 	$(boot2docker shellinit 2> /dev/null)
