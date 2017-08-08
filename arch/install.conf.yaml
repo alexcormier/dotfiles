@@ -31,11 +31,11 @@
     - openssh
     - pcmanfm
     - perl-image-exiftool
+    - reflector
     - screenfetch
     - skype
     - texlive-plainextra
     - ttf-anonymous-pro
-    - update-pacman-mirrorlist
     - vim
     - virtualbox
     - visual-studio-code
@@ -61,9 +61,4 @@
     ~/.xinitrc: xinitrc
     ~/.Xresources: Xresources
 
-- shell:
-    -
-        command: [systemctl enable update-pacman-mirrorlist.timer, Enabling automatic mirrorlist updates]
-        stdin: true
-        stdout: true
-        stderr: true
+# TODO: Enable automatic mirrorlist updates with reflector
