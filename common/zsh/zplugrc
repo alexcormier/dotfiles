@@ -12,8 +12,6 @@ zplug 'zsh-users/zsh-history-substring-search', defer:3
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
 zplug 'plugins/cargo', from:oh-my-zsh
-zplug 'plugins/catimg', from:oh-my-zsh, as:command
-zplug 'plugins/colored-man-pages', from:oh-my-zsh
 
 zplug 'denysdovhan/spaceship-zsh-theme', use:'spaceship.zsh*', as:theme
 SPACESHIP_RUST_SHOW_VERSION=false
