@@ -1,0 +1,29 @@
+if [[ ! -d ~/.zplug ]]; then
+    echo "Installing zplug..."
+    git clone https://github.com/zplug/zplug ~/.zplug > /dev/null 2>&1
+fi
+source ~/.zplug/init.zsh
+
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-completions'
+zplug 'zsh-users/zsh-history-substring-search', defer:3
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
+
+zplug 'plugins/cargo', from:oh-my-zsh
+zplug 'plugins/catimg', from:oh-my-zsh, as:command
+zplug 'plugins/colored-man-pages', from:oh-my-zsh
+
+zplug 'denysdovhan/spaceship-zsh-theme', use:'spaceship.zsh*', as:theme
+SPACESHIP_RUST_SHOW_VERSION=false
+SPACESHIP_RUST_SHOW_TOOLCHAIN=true
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load
