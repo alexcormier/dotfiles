@@ -3,7 +3,10 @@
       create: true
       relink: true
 
-- clean: ['~']
+- clean:
+    - '~'
+    - '~/.config'
+    - '~/bin'
 
 - link:
     ~/.aliases: aliases
@@ -13,7 +16,6 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zlogin: zsh/zlogin
-    ~/.zplugrc: zsh/zplugrc
     ~/.zshenv: zsh/zshenv
     ~/.zshkeys: zsh/zshkeys
     ~/.zshrc: zsh/zshrc

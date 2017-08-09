@@ -3,6 +3,19 @@
       create: true
       relink: true
 
+- clean:
+    - '~'
+    - '~/.config'
+    - '~/bin'
+
+- link:
+    ~/bin/arch: bin
+    ~/.config/termite/config: termite.conf
+    ~/.config/compton.conf: compton.conf
+    ~/.xbindkeysrc: xbindkeysrc
+    ~/.xinitrc: xinitrc
+    ~/.Xresources: Xresources
+
 - pacaur:
     - albert
     - alsa-utils
@@ -16,26 +29,27 @@
     - exa
     - feh
     - file-roller
-    - fish
     - google-chrome
     - hexchat
-    - i3-wm
+    - i3-gaps
+    - i3blocks-gaps-git
     - intel-ucode
     - libreoffice-fresh
     - mpc
     - mpd
     - mycli
-    - mysql-workbench
     - nano
     - ncmpcpp
     - nitrogen
     - openssh
+    - otf-fira-code
+    - otf-font-awesome
     - pcmanfm
     - perl-image-exiftool
     - reflector
     - screenfetch
-    - skype
-    - texlive-plainextra
+    - termite
+    - texlive-most
     - ttf-anonymous-pro
     - vim
     - virtualbox
@@ -54,12 +68,5 @@
     - zsh
     - zsh-completions
     - zsh-syntax-highlighting
-
-- link:
-    ~/bin/arch: bin
-    ~/.config/compton.conf: compton.conf
-    ~/.xbindkeysrc: xbindkeysrc
-    ~/.xinitrc: xinitrc
-    ~/.Xresources: Xresources
 
 # TODO: Enable automatic mirrorlist updates with reflector
