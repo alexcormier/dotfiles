@@ -13,29 +13,34 @@
     ~/.vim: vim
     ~/.vimrc: vimrc
     ~/.zlogin: zsh/zlogin
+    ~/.zplugrc: zsh/zplugrc
     ~/.zshenv: zsh/zshenv
     ~/.zshkeys: zsh/zshkeys
     ~/.zshrc: zsh/zshrc
 
 - rust:
-  - stable:
-    - targets:
-      - x86_64-apple-darwin
-      - x86_64-unknown-linux-gnu
-      - x86_64-unknown-linux-musl
-    - components:
-      - rust-analysis
-      - rls
-      - rust-src
-  - nightly:
-    - targets:
-      - x86_64-apple-darwin
-      - x86_64-unknown-linux-gnu
-      - x86_64-unknown-linux-musl
-    - components:
-      - rust-analysis
-      - rls
-      - rust-src
+  - options:
+    - no-modify-path
+    - default-toolchain: stable
+  - toolchains:
+    - stable:
+      - targets:
+        - x86_64-apple-darwin
+        - x86_64-unknown-linux-gnu
+        - x86_64-unknown-linux-musl
+      - components:
+        - rust-analysis
+        - rls
+        - rust-src
+    - nightly:
+      - targets:
+        - x86_64-apple-darwin
+        - x86_64-unknown-linux-gnu
+        - x86_64-unknown-linux-musl
+      - components:
+        - rust-analysis
+        - rls
+        - rust-src
 
 - cargo:
   - cargo-update
