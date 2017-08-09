@@ -44,5 +44,3 @@
   - racer
   - rustfmt
   - rustsym
-  - exa:
-    - git: https://github.com/ogham/exa
