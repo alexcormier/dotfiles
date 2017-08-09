@@ -47,6 +47,7 @@
     - pcmanfm
     - perl-image-exiftool
     - reflector
+    - ripgrep
     - screenfetch
     - termite
     - texlive-most
