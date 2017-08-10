@@ -40,4 +40,4 @@ nitrogen --restore
 compton -b --config ~/.config/compton.conf
 albert &
 
-exec i3
+TERMINAL="termite" exec i3

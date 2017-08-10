@@ -7,7 +7,6 @@ case "$(uname -s)" in
     Linux)
         export CC="gcc"
         export CXX="g++"
-        export TERMINAL="termite"
         ;;
     Darwin)
         export CC="clang"
