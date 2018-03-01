@@ -3,6 +3,7 @@
     email = alexandre@cormier.io
     signingkey = 851296D2
 [core]
+    excludesfile = ~/.gitignore
     editor = vim
     autocrlf = input
 [color]
