@@ -11,9 +11,9 @@
 
 :syntax on
 
-":set spell spelllang=en_us
+:set spell spelllang=en_us
 :autocmd FileType gitcommit set spell spelllang=en_us
 
 :set mouse=a
 
-:colorscheme slate
+:colorscheme nord
