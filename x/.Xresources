@@ -1,0 +1,5 @@
+Xft.dpi: 120
+Xft.antialias: true
+
+#include ".config/nord/Xresources"
+

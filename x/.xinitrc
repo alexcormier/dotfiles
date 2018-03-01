@@ -23,8 +23,6 @@ if [ -f "$usermodmap" ]; then
     xmodmap "$usermodmap"
 fi
 
-# start some nice programs
-
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  for f in /etc/X11/xinit/xinitrc.d/?* ; do
   [ -x "$f" ] && . "$f"
@@ -32,12 +30,13 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# start programs
+
 xflux -l 46.7 -g -71.3
-xbindkeys
 xsetroot -cursor_name left_ptr
-[[ -f ~/.fehbg ]] && ~/.fehbg
+# [[ -f ~/.fehbg ]] && ~/.fehbg
 nitrogen --restore
 compton -b --config ~/.config/compton.conf
-albert &
+parcellite -n &
 
-TERMINAL="termite" exec i3
+TERMINAL="alacritty" exec bspwm
