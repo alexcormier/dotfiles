@@ -13,9 +13,11 @@ zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
 zplug 'plugins/cargo', from:oh-my-zsh
 
+
 zplug 'denysdovhan/spaceship-zsh-theme', use:'spaceship.zsh*', as:theme
 SPACESHIP_RUST_SHOW_VERSION=false
 SPACESHIP_RUST_SHOW_TOOLCHAIN=true
+SPACESHIP_VENV_SHOW=false
 
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
