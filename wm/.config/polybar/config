@@ -1,0 +1,182 @@
+[colors]
+background = ${colors.background-inactive}
+background-active = #ff383c4a
+background-inactive = #00383c4a
+foreground = ${colors.foreground-active}
+foreground-active = #ffd3dae3
+foreground-inactive = #88d3dae3
+
+
+[bar/top]
+monitor = eDP1
+width = 100%
+height = 36
+bottom = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+padding = 4
+module-margin-left = 1
+module-margin-right = 2
+
+line-size = 3
+line-color = ${colors.foreground}
+
+font-0 = SF Pro Display:size=16;4
+font-1 = Font Awesome 5 Free Solid:size=16;3
+font-2 = Font Awesome 5 Brands:size=16;3
+
+modules-left = wm mpd
+modules-center =
+modules-right = volume wifi battery date powermenu
+
+tray-position = right
+tray-background = ${colors.background}
+tray-offset-y = -1
+
+wm-restack = bspwm
+
+separator = "   "
+
+
+[module/wm]
+type = internal/bspwm
+
+ws-icon-0 = web;
+ws-icon-1 = term;
+ws-icon-2 = code;
+ws-icon-3 = misc; 
+ws-icon-4 = music;
+ws-icon-default = 
+
+format = <label-state> <label-mode>
+
+label-focused = %icon%
+label-focused-background = ${colors.background-active}
+label-focused-underline= ${colors.foreground-active}
+label-focused-padding = 4
+
+label-occupied = %icon%
+label-occupied-padding = 4
+
+label-urgent = %icon%
+label-urgent-padding = 4
+
+label-empty = %icon%
+label-empty-foreground = ${colors.foreground-inactive}
+label-empty-padding = 4
+
+
+[module/wifi]
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+format-connected = <ramp-signal>  <label-connected>
+label-connected = %essid%
+
+format-disconnected =   <label-disconnected>
+label-disconnected = not connected
+label-disconnected-foreground = ${colors.foreground-inactive}
+
+ramp-signal-0 = 
+
+
+[module/date]
+type = internal/date
+
+format =   <label>
+label = %date% %time%
+
+date = %a %b %d,
+time = %H:%M
+date-alt = %A, %B %d %Y,
+time-alt = %H:%M:%S
+
+
+[module/volume]
+type = internal/volume
+# TODO
+
+
+[module/battery]
+type = internal/battery
+full-at = 97
+
+format-charging = <animation-charging>  <label-charging>
+format-discharging = <ramp-capacity>  <label-discharging>
+format-full =   <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.foreground-active}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.foreground-active}
+animation-charging-framerate = 750
+
+[module/mpd]
+type = internal/mpd
+
+format-online = <label-song>  <label-time>  <bar-progress>  <icon-prev> <icon-seekb> <icon-stop> <toggle> <icon-seekf> <icon-next>  <icon-repeat> <icon-random>
+format-offline = <label-offline>
+format-offline-foreground = ${colors.foreground-inactive}
+label-offline = mpd is off
+
+icon-seekb = 
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+icon-seekf = 
+
+icon-random = 
+icon-repeat = 
+
+toggle-on-foreground = ${colors.foreground-active}
+toggle-off-foreground = ${colors.foreground-inactive}
+
+bar-progress-width = 15
+bar-progress-indicator = 
+bar-progress-indicator-foreground = ${colors.foreground-active}
+bar-progress-fill = ─
+bar-progress-fill-foreground = ${colors.foreground-active}
+bar-progress-fill-font = 3
+bar-progress-empty = ─
+bar-progress-empty-foreground = ${colors.foreground-inactive}
+bar-progress-empty-font = 3
+
+label-time-foreground = ${colors.foreground-inactive}
+
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+# label-close = cancel
+# label-open-padding = 4
+# label-close-padding = 3
+
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
+menu-0-0-padding = 3
+menu-0-1-padding = 3
+
+menu-1-0 = reboot?
+menu-1-0-exec = systemctl reboot
+menu-1-0-padding = 3
+
+menu-2-0 = power off?
+menu-2-0-exec = systemctl poweroff
+menu-2-0-padding = 3

@@ -1,5 +1,7 @@
 Xft.dpi: 120
 Xft.antialias: true
 
+Xcursor.theme: FlatbedCursors-White
+
 #include ".config/nord/Xresources"
 

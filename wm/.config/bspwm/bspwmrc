@@ -1,0 +1,24 @@
+#! /bin/sh
+
+SXHKD_SHELL=/bin/bash sxhkd &
+
+bspc monitor -d web term code misc music
+
+bspc config border_width            2
+bspc config active_border_color     \#2E3440
+bspc config focused_border_color     \#2E3440
+bspc config normal_border_color     \#2E3440
+bspc config window_gap              12
+
+bspc config split_ratio             0.5
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+
+bspc config focus_follows_pointer   true
+bspc config pointer_follows_focus   true
+bspc config pointer_follows_monitor true
+
+bspc rule -a Nightly desktop=web
+bspc rule -a Code desktop=code
+
+polybar top
