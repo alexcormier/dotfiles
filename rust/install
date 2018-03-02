@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+which rustup > /dev/null 2>&1 || curl https://sh.rustup.rs -sSf | sh -s -- --no-modify-path
+
+rustup update > /dev/null 2>&1
+
+for toolchain in stable nightly; do
+    rustup toolchain list | grep stable > /dev/null || rustup toolchain add $toolchain
+    for component in rustfmt-preview rls-preview rust-analysis rust-src; do
+        rustup component add --toolchain $toolchain $component;
+    done
+done
+
+cargo install cargo-update
+cargo install cargo-expand
+cargo install diesel_cli
+cargo install fd-find
+cargo install racer
+cargo install ripgrep
+
+cargo install-update --all
