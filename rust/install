@@ -11,9 +11,11 @@ for toolchain in stable nightly; do
     done
 done
 
+cargo install bat
 cargo install cargo-update
 cargo install cargo-expand
 cargo install diesel_cli
+cargo install du-dust
 cargo install fd-find
 cargo install racer
 cargo install ripgrep
