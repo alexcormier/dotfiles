@@ -21,7 +21,7 @@ for file in $HOME/bin/**/*; do
         path=("$file" $path)
     fi
 done
-path=("$HOME/bin" $path)
+path=("$HOME/bin" "$HOME/.local/bin" $path)
 
 mkdir -p $HOME/.zfunc
 fpath+=$HOME/.zfunc
@@ -40,3 +40,11 @@ if [[ -d ~/omnetpp-4.6 ]]; then
     source ./setenv > /dev/null
     popd > /dev/null
 fi
+
+if [ -f $HOME/.local/bin/virtualenvwrapper_lazy.sh ]; then
+    export WORKON_HOME=$HOME/.venvs
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python2
+    export VIRTUALENVWRAPPER_VIRTUALENV=/usr/bin/virtualenv2
+    source $HOME/.local/bin/virtualenvwrapper_lazy.sh
+fi
+
