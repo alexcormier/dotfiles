@@ -79,7 +79,7 @@ fi
 # open new terminal in same directory
 #######################################################################
 
-source /etc/profile.d/vte.sh
+[ -f /etc/profile.d/vte.sh ] && source /etc/profile.d/vte.sh
 
 #######################################################################
 # zplug
