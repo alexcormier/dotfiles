@@ -26,7 +26,7 @@ alias sha512='openssl sha512'
 # Miscellaneous
 command -v bat > /dev/null 2>&1 && alias cat='bat'
 command -v git > /dev/null 2>&1 && alias diff='git diff'
-command -v aurman > /dev/null 2>&1 && alias pacman='aurman'
+command -v yay > /dev/null 2>&1 && alias pacman='yay'
 command -v subl3 > /dev/null 2>&1 && alias subl='subl3'
 command -v vim > /dev/null 2>&1 && alias vi='vim'
 command -v /Applications/Karabiner.app/Contents/Library/bin/karabiner > /dev/null 2>&1 && alias karabiner='/Applications/Karabiner.app/Contents/Library/bin/karabiner'
