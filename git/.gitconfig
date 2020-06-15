@@ -33,5 +33,6 @@
     prompt=false
 
 [alias]
-    edit-config = config --global --edit
-
+    co = checkout
+    st = status
+    unstage = reset HEAD
