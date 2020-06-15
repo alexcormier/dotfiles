@@ -2,7 +2,9 @@
 
 SXHKD_SHELL=/bin/bash sxhkd &
 
-bspc monitor -d web term code misc music
+for m in $(bspc query --monitors); do
+    bspc monitor $m -d web term code misc music
+done
 
 bspc config border_width            2
 bspc config active_border_color     \#2E3440
@@ -22,4 +24,6 @@ bspc rule -a Nightly desktop=web
 bspc rule -a Firefox desktop=web
 bspc rule -a Code desktop=code
 
-polybar top
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    MONITOR=$m polybar --reload top &
+done
