@@ -30,6 +30,18 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+main="eDP1"
+previous="$main"
+mainres="$(xrandr --query | grep -A 1 $main | sed --quiet -E 's/^\s+([0-9]+)x.*$/\1/p')"
+for m in $(xrandr --query | grep " connected" | cut -d" " -f1); do
+    if [ "$m" != "$main" ]; then
+        res="$(xrandr --query | grep -A 1 $m | sed --quiet -E 's/^\s+([0-9]+)x.*$/\1/p')"
+        scale="$(echo "scale=1;$mainres/$res" | bc)"
+        xrandr --output $m --right-of $previous --scale $scale
+        previous=$m
+    fi
+done
+
 # start programs
 
 xflux -l 46.7 -g -71.3
