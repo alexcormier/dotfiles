@@ -36,7 +36,7 @@ xflux -l 46.7 -g -71.3
 xsetroot -cursor_name left_ptr
 # [[ -f ~/.fehbg ]] && ~/.fehbg
 nitrogen --restore
-compton -b --config ~/.config/compton.conf
+picom -b
 parcellite -n &
 
 TERMINAL="alacritty" exec bspwm
