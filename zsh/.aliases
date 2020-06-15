@@ -14,10 +14,6 @@ elif [[ "$(uname -s)" == "Linux" ]]; then
     alias ls='ls --color=always'
 fi
 
-alias grep='grep --color=always'
-alias egrep='egrep --color=always'
-alias fgrep='fgrep --color=always'
-
 # Hash functions
 alias md5='openssl md5'
 alias sha='openssl sha'
