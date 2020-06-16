@@ -5,6 +5,10 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export CLICOLOR=1
 export LSCOLORS=exFxCxDxBxegedabagacad
 
+if command -v bat > /dev/null; then
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
 command -v vim > /dev/null 2>&1 && export EDITOR='vim'
 
 case "$(uname -s)" in
