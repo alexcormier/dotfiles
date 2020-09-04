@@ -5,8 +5,7 @@ if command -v bat > /dev/null; then
 fi
 
 if command -v alacritty > /dev/null 2>&1; then
-    export TERM='alacritty'
-    export TERMINAL="${TERM}"
+    export TERMINAL='alacritty'
 fi
 command -v vim > /dev/null 2>&1 && export EDITOR='nvim'
 

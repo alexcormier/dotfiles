@@ -1,5 +1,7 @@
 # Sets sane Zsh built-in environment options.
 zmodule environment
+# Applies sane key bindings
+zmodule input
 # Sets a custom terminal title.
 zmodule termtitle
 # Utility functions dealing with archives.
