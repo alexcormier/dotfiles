@@ -4,7 +4,6 @@
     signingkey = 851296D2
 
 [core]
-    editor = nvim
     autocrlf = input
     pager = delta
 
