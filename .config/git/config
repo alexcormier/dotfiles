@@ -1,0 +1,47 @@
+[user]
+    name = Alexandre Cormier
+    email = alexandre@cormier.io
+    signingkey = 851296D2
+
+[core]
+    editor = nvim
+    autocrlf = input
+    pager = delta
+
+[delta]
+    syntax-theme = Dracula
+    side-by-side = true
+    file-modified-label = modified:
+
+
+[interactive]
+    diffFilter = delta --color-only
+
+[color]
+    ui = true
+
+[push]
+    default = simple
+[pull]
+    rebase = false
+
+[credential]
+    helper = cache --timeout=3600
+
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[difftool "code"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+    tool = vimdiff
+    conflictstyle = diff3
+[mergetool]
+    prompt=false
+
+[alias]
+    co = checkout
+    st = status
+    unstage = reset HEAD
