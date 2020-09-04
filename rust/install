@@ -5,7 +5,7 @@ which rustup > /dev/null 2>&1 || curl https://sh.rustup.rs -sSf | sh -s -- --no-
 rustup update > /dev/null 2>&1
 
 for toolchain in stable nightly; do
-    rustup toolchain list | grep stable > /dev/null || rustup toolchain add $toolchain
+    rustup toolchain list | grep $toolchain > /dev/null || rustup toolchain add $toolchain
     for component in rustfmt-preview rls-preview rust-analysis rust-src; do
         rustup component add --toolchain $toolchain $component;
     done
