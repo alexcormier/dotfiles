@@ -13,9 +13,10 @@ alias llaa 'ls -laa' # specific to exa, equivalent to -la with ls proper
 # create parent directories by default
 alias mkdir 'mkdir -p'
 
-# prevent accidental overwrites
+# prevent accidental overwrites and deletions
 alias cp 'cp -i'
 alias mv 'mv -i'
+alias rm 'rm -I'
 
 # resume downloads by default
 command -q wget && alias wget 'wget -c'
@@ -24,5 +25,8 @@ command -q wget && alias wget 'wget -c'
 command -q exa && alias ls 'exa --classify --git'
 command -q bat && alias cat 'bat'
 command -q yay && alias pacman 'yay'
-command -q vim && alias vi 'vim'
-command -q nvim && alias vim 'nvim'
+
+# always use the preferred vi variant
+for ed in vi vim nvim
+    test "$EDITOR" != "$ed" && alias "$ed" "$EDITOR"
+end

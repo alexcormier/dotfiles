@@ -12,7 +12,6 @@
     side-by-side = true
     file-modified-label = modified:
 
-
 [interactive]
     diffFilter = delta --color-only
 

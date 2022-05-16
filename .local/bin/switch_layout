@@ -1,21 +1,21 @@
 #!/bin/bash
 
 if [[ -n "$1" ]]; then
-    setxkbmap $1
+    setxkbmap $1 -option caps:escape
 else
     layout="$(current_layout)"
     case "$layout" in
         'us')
-            setxkbmap -layout us -variant intl
+            setxkbmap -layout us -variant intl -option caps:escape
             ;;
         'us(intl)')
-            setxkbmap -layout ru
+            setxkbmap -layout ru -option caps:escape
             ;;
         'ru')
-            setxkbmap -layout ru -variant phonetic
+            setxkbmap -layout ru -variant phonetic -option caps:escape
             ;;
         *)
-            setxkbmap us
+            setxkbmap us -option caps:escape
             ;;
     esac
 fi
