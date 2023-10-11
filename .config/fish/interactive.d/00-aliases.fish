@@ -4,7 +4,7 @@
 alias dots 'git --git-dir {$HOME}/.config/dots --work-tree {$HOME}'
 
 # shorthands for ls
-alias l 'ls'
+alias l ls
 alias la 'ls -a'
 alias ll 'ls -l'
 alias lla 'ls -la'
@@ -22,9 +22,9 @@ alias rm 'rm -I'
 command -q wget && alias wget 'wget -c'
 
 # replace some programs
-command -q exa && alias ls 'exa --classify --git'
-command -q bat && alias cat 'bat'
-command -q yay && alias pacman 'yay'
+command -q eza && alias ls 'eza --classify --git'
+command -q bat && alias cat bat
+command -q yay && alias pacman yay
 
 # always use the preferred vi variant
 for ed in vi vim nvim
