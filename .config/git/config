@@ -43,3 +43,11 @@
     co = checkout
     st = status
     unstage = reset HEAD
+[init]
+	defaultBranch = main
+[rebase]
+	autoSquash = true
+	autoStash = true
+
+[alias]
+  new = log --oneline master..HEAD
